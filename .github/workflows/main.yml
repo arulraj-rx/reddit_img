@@ -1,7 +1,21 @@
-name: Reddit - reddit_img
+name: reddit_img
 
 on:
   schedule:
+    # Morning posts (Weekdays + Weekends)
+    - cron: '30 0 * * *'  # 06:00 AM IST
+    
+    - cron: '30 3 * * *'  # 09:00 AM IST
+
+    # Midday test slot (for global users)
+    - cron: '30 6 * * *'  # 12:00 PM IST
+    
+    - cron: '30 8 * * *'  # 02:00 PM IST
+
+    # Evening slot (emotional/reflection content)
+    
+    - cron: '30 15 * * *' # 09:00 PM IST
+    - cron: '30 16 * * *' # 10:00 PM IST
 
   workflow_dispatch:
 
@@ -36,7 +50,7 @@ jobs:
           cd ffmpeg-*-amd64-static
           sudo mv ffmpeg ffprobe /usr/local/bin
           cd ..
-          rm -rf ffmpeg*  # cleanup
+          rm -rf ffmpeg*
 
       - name: Install Python dependencies
         run: |
