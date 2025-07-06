@@ -1,4 +1,4 @@
-# reddit_img.py
+# reddit_img.py.py
 
 import os
 import logging
@@ -55,7 +55,8 @@ TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 
 # Target subreddits for crossposting
 TARGET_SUBREDDITS = [
-    'motivation', 
+    'motivation',
+    'stoicquotes', 
     'selflove',
     'Quotes_Hub',
     'inspirationalquotes',
