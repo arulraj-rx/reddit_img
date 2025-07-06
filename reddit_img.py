@@ -1,4 +1,4 @@
-# reddit_img.py.py
+# reddit.py
 
 import os
 import logging
@@ -62,6 +62,8 @@ TARGET_SUBREDDITS = [
     'inspirationalquotes',
     'inspiration',
     'Adulting',
+    'MotivationalQuotes',
+    'Poetry',
     'MotivationalThoughts'
 ]
 
