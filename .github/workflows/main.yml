@@ -2,14 +2,11 @@ name: reddit_img
 
 on:
   schedule:
-    # Additional non-overlapping time slots (IST)
-    - cron: '30 23 * * *'  # 05:00 AM IST (Early post)
-    - cron: '0 5 * * *'    # 10:30 AM IST
-    - cron: '30 9 * * *'   # 03:00 PM IST
-    - cron: '0 11 * * *'   # 04:30 PM IST
-    - cron: '30 17 * * *'  # 11:00 PM IST (Late-night post)
-
-
+    - cron: '30 23 * * *'
+    - cron: '0 5 * * *'
+    - cron: '30 9 * * *'
+    - cron: '0 11 * * *'
+    - cron: '30 17 * * *'
   workflow_dispatch:
 
 jobs:
@@ -36,14 +33,8 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install ffmpeg (static binary, fast)
-        run: |
-          curl -L https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz -o ffmpeg.tar.xz
-          tar -xf ffmpeg.tar.xz
-          cd ffmpeg-*-amd64-static
-          sudo mv ffmpeg ffprobe /usr/local/bin
-          cd ..
-          rm -rf ffmpeg*
+      - name: Install ffmpeg (via apt)
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Install Python dependencies
         run: |
