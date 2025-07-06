@@ -2,20 +2,13 @@ name: reddit_img
 
 on:
   schedule:
-    # Morning posts (Weekdays + Weekends)
-    - cron: '30 0 * * *'  # 06:00 AM IST
-    
-    - cron: '30 3 * * *'  # 09:00 AM IST
+    # Additional non-overlapping time slots (IST)
+    - cron: '30 23 * * *'  # 05:00 AM IST (Early post)
+    - cron: '0 5 * * *'    # 10:30 AM IST
+    - cron: '30 9 * * *'   # 03:00 PM IST
+    - cron: '0 11 * * *'   # 04:30 PM IST
+    - cron: '30 17 * * *'  # 11:00 PM IST (Late-night post)
 
-    # Midday test slot (for global users)
-    - cron: '30 6 * * *'  # 12:00 PM IST
-    
-    - cron: '30 8 * * *'  # 02:00 PM IST
-
-    # Evening slot (emotional/reflection content)
-    
-    - cron: '30 15 * * *' # 09:00 PM IST
-    - cron: '30 16 * * *' # 10:00 PM IST
 
   workflow_dispatch:
 
