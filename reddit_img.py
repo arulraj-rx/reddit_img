@@ -55,7 +55,10 @@ TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 
 # Target subreddits for crossposting
 TARGET_SUBREDDITS = [
-    ''
+    'motivation',
+    'inspirationalquotes',
+    'MotivationalQuotes',
+    'MotivationalThoughts'
 ]
 
 # Validate required credentials
