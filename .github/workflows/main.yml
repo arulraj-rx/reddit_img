@@ -2,12 +2,13 @@ name: reddit_img
 
 on:
   schedule:
-    - cron: '30 19 * * *'  # 01:00 AM IST (previous day UTC)
-    - cron: '30 23 * * *'  # 05:00 AM IST (previous day UTC)
-    - cron: '15 4 * * *'   # 09:45 AM IST
-    - cron: '30 8 * * *'   # 02:00 PM IST
-    - cron: '30 13 * * *'  # 07:00 PM IST
-    - cron: '45 16 * * *'  # 10:15 PM IST
+    - cron: '30 20 * * *'  # 02:00 AM IST (previous day UTC)
+    - cron: '30 0 * * *'   # 06:00 AM IST
+    - cron: '15 5 * * *'   # 10:45 AM IST
+    - cron: '30 9 * * *'   # 03:00 PM IST
+    - cron: '30 14 * * *'  # 08:00 PM IST
+    - cron: '45 17 * * *'  # 11:15 PM IST
+
 
   workflow_dispatch:
 
